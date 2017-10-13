@@ -9,19 +9,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "contact")
 public class Contact {
-	
+
+	@Column(name = "city")
+	private String city;
+
+	@Column(name = "firstName")
+	private String firstName;
 	@Id
 	@GeneratedValue
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
-	@Column(name="city")
-	private String city;
-	@Column(name="firstName")
-	private String firstName;
-	@Column(name="lastName")
+	@Column(name = "lastName")
 	private String lastName;
-	@Column(name="telephone")
+	@Column(name = "telephone")
 	private String telephone;
 
 	public Contact() {
@@ -36,20 +36,16 @@ public class Contact {
 		this.telephone = telephone;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getCity() {
 		return city;
 	}
 
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public int getId() {
+		return id;
 	}
 
 	public String getLastName() {
@@ -68,6 +64,10 @@ public class Contact {
 		this.firstName = firstName;
 	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
@@ -78,7 +78,8 @@ public class Contact {
 
 	@Override
 	public String toString() {
-		return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", telephone=" + telephone + ", city="
-				+ city + "]";
+		return "Contact [id=" + id + ", city=" + city + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", telephone=" + telephone + "]";
 	}
+
 }

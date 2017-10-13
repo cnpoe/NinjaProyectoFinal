@@ -16,6 +16,10 @@ public class ContactModel {
 		this.city = city;
 	}
 
+	public ContactModel() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getCity() {
 		return city;
 	}
