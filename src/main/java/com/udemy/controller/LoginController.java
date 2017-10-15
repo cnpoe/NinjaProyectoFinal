@@ -43,7 +43,7 @@ public class LoginController {
 		if(userCredential.getUsername().equals("user")
 				&& userCredential.getPassword().equals("user")){
 			LOG.info("Returning to the contacts view");
-			return ViewConstant.CONTACTS;
+			return "redirect:/contacts/showcontacts";
 		}
 		LOG.info("Redirect to the login?error");
 		return "redirect:/login?error";
